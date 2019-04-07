@@ -37,3 +37,16 @@ class User:
         for user in cls.user_list:
             if user.phone_number == number:
                 return user
+
+
+    @classmethod
+    def user_exist(cls,number):
+        '''
+        method that cheks if a user exists from user list .
+        '''
+
+        for user in cls.user_list:
+            if user.phone_number == number:
+                return True
+
+        return False        
