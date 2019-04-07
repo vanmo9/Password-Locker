@@ -17,9 +17,14 @@ class User:
 
         User.user_list.append(self)
 
-
     def delete_user(self):
         '''
         delete_user method is to delete a saved user from the user_list
         '''
         User.user_list.remove(self)
+
+    @classmethod
+    def find_by_number(cls, number):
+        '''
+        method that allowto take in a number and returns a user that matches that number .
+        '''
