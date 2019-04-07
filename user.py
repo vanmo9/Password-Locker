@@ -1,4 +1,5 @@
 class User:
+
     """
     Class that generates new instaces of usersself.
 
@@ -24,7 +25,7 @@ class User:
         User.user_list.remove(self)
 
     @classmethod
-    def find_by_number(cls, number):
+    def find_by_number(cls, username):
         '''
         method that allowto take in a number and returns a user that matches that number .
 
@@ -35,18 +36,18 @@ class User:
             User of persons that matches the number.
         '''
         for user in cls.user_list:
-            if user.phone_number == number:
+            if user.username == username:
                 return user
 
 
     @classmethod
-    def user_exist(cls,number):
+    def user_exist(cls,username):
         '''
         method that cheks if a user exists from user list .
         '''
 
         for user in cls.user_list:
-            if user.phone_number == number:
+            if user.username == username:
                 return True
 
         return False
