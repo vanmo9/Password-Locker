@@ -90,4 +90,5 @@ def setUp(self):
         self.assertEqual(found_user.email,test_user.email)
 
 
-        
+if __name__ == '__main__':
+    unittest.main()
