@@ -54,3 +54,59 @@ def main():
 
     while True:
              print("Use these short codes : cu - create a new user, du - display users, fu -find a user, ex -exit the user list ")
+
+              short_code = input().lower()
+              if short_code == 'cu':
+                      print("New User")
+                      print("-"*10)
+
+                      print("Username  ..")
+                      username = input()
+
+                      print("Password ..")
+                      password = input()
+
+
+                      save_user(create_user(username,password))
+                      print ('\n')
+                      print(f"New User {username} {password} created")
+                      print('\n')
+
+
+
+                elif short_code == 'du':
+
+                    if display_user():
+                           print("Here is a list of all your users")
+                           print('\n')
+
+
+                            for users in diplay_users():
+                                    print(f"{user.username} {user.password}")
+                                    print('\n')
+                    else:
+                                    prin('\n')
+                                    print("You dont seem to have any users saved yet")
+                                    print('\n')
+
+
+                elif short_code == 'fu':
+
+                       print("Enter the user you want to search for")
+
+                        search_user = input()
+                        if check_existing_users(search_user):
+                               search_user = find_user(search_user)
+                               print(f"{search_user.username} {search_user.password}")
+                               print('-' *20)
+
+                               print(f"Phone number.......{search_contact.phone_number}")
+
+                            else:
+                               print("That contact does not exist")
+
+                elif short_code == "ex":
+                            print("Bye .......")
+                            break
+                    else:
+                            print("I really didn't get that. Please use the short codes")
