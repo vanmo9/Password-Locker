@@ -42,3 +42,15 @@ def display_users():
     function that returns all the saved users
     '''
     return User.display_users()
+
+
+def main():
+    print("Welcome. What is your name?")
+           user_name = input()
+
+    print(f"Hello {user_name}. What would you like?")
+    print('\n')
+
+
+    while True:
+             print("Use these short codes : cu - create a new user, du - display users, fu -find a user, ex -exit the user list ")
