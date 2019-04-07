@@ -90,5 +90,15 @@ def setUp(self):
         self.assertEqual(found_user.email,test_user.email)
 
 
-if __name__ == '__main__':
-    unittest.main()
+    def test_user_exists(self):
+        '''
+        test to check if we can return aBollean if we cannot find the user
+        '''
+
+        self.new_user,save_user()
+        test_user = User("Test","user","911mo","911mo")
+        test_user.save_user()
+
+        user_exists = User.user_exist("911mo")
+
+        self.assertTrue(user_exists)
