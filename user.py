@@ -27,4 +27,13 @@ class User:
     def find_by_number(cls, number):
         '''
         method that allowto take in a number and returns a user that matches that number .
+
+
+        Args:
+            number:Phone number to search for
+        Returns :
+            User of persons that matches the number.
         '''
+        for user in cls.user_list:
+            if user.phone_number == number:
+                return user
