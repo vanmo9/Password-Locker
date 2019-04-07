@@ -75,6 +75,19 @@ def setUp(self):
         self.assertEqual(len(User.user_list),1)
 
 
+    def test_find_user_by_number(self):
+        '''
+        this is to check if we can find user by a number and display information
+        '''
 
-if __name__ == '__main__':
-    unittest.main()
+        self.new_user.save_user()
+        test_user = User("Test","user","911mo","911mo")
+        test_user.save_user()
+
+        found_user = User.find_by_number("911mo")
+
+
+        self.assertEqual(found_user.email,test_user.email)
+
+
+        
