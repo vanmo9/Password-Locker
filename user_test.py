@@ -42,10 +42,9 @@ def setUp(self):
         '''
 
     self.new_user.save_user()
-    test_user = User("Test","user","911mo","911mo")
+    test_user = User("Test", "user", "911mo", "911mo")
     test_user.save_user()
-    self.assertEqual(len(User.user_list),2)
-
+    self.assertEqual(len(User.user_list), 2)
 
     def tearDown(self):
         '''
@@ -54,24 +53,28 @@ def setUp(self):
 
         User.user_list = []
 
-        def test_save_multiple_user(self):
-            '''
-            test_save_multiple_user to check if we can save multiple user objects to our user_list
-            '''
-            self.new_user.save_user()
-            test_user = User("Test","user","911mo","911mo")
-            test_user.save_user()
-            self.assertEqual(len(User.user_list),2)
+    def test_save_multiple_user(self):
+        '''
+        test_save_multiple_user to check if we can save multiple user objects to our user_list
+        '''
+        self.new_user.save_user()
+        test_user = User("Test", "user", "911mo", "911mo")
+        test_user.save_user()
+        self.assertEqual(len(User.user_list), 2)
 
 
-         def test_delete_user(self):
-             '''
-             test_delete_user to test if we can remove a user from our user list
-             '''
-             self.new_user.save_user()
-             test_user = User("Test","user","911mo","911mo")
-             test_user.save_user()
+    def test_delete_user(self):
+        '''
+        test_delete_user to test if we can remove a user from our user list
+        '''
+        self.new_user.save_user()
+        test_user = User("Test","user","911mo","911mo")
+        test_user.save_user()
 
-             self.new_user.delete_user()
-             self.assertEqual(len(User.user_list),1)
-             
+        self.new_user.delete_user()
+        self.assertEqual(len(User.user_list),1)
+
+
+
+if __name__ == '__main__':
+    unittest.main()
