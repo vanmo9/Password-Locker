@@ -31,10 +31,14 @@ def find_user(number):
     return User.find_by_number(number)
 
 
-def check_existing_user(number):
+def check_existing_users(number):
     '''
     function that cheks if a user exists with that number and return a Boolean
     '''
     return User.user_exist(number)
 
-                
+def display_users():
+    '''
+    function that returns all the saved users
+    '''
+    return User.display_users()
