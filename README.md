@@ -28,5 +28,5 @@ This is a python web application that allows users to create accounts and can lo
 *   [Email](vanmowha@gmail.com)
 
 
-## License ([MIT License](  ))
+## License ([MIT License]( https://github.com/vanmo9/Password-Locker/blob/master/LICENSE ))
 This project is licensed under the MIT Open Source license, (c) [Mohamed Hassan]( )
