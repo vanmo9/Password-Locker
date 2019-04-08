@@ -1,7 +1,7 @@
 class User:
 
     """
-    Class that generates new instaces of usersself.
+    Class that generates new instaces of users.
 
     """
     user_list = []
@@ -13,27 +13,27 @@ class User:
 
     def save_user(self):
         '''
-        save_user method saves user objects into user_list
+        save_user method saves user objects into user list
         '''
 
         User.user_list.append(self)
 
     def delete_user(self):
         '''
-        delete_user method is to delete a saved user from the user_list
+        delete_user is method used to delete a saved user from the user list
         '''
         User.user_list.remove(self)
 
     @classmethod
     def find_by_number(cls, username):
         '''
-        method that allowto take in a number and returns a user that matches that number .
+        method that allows to take in a username and returns a user that matches with  that username .
 
 
         Args:
-            number:Phone number to search for
+            user:username to search for
         Returns :
-            User of persons that matches the number.
+            users that matches the username.
         '''
         for user in cls.user_list:
             if user.username == username:
@@ -56,6 +56,6 @@ class User:
     @classmethod
     def display_users(cls):
         '''
-        method that returns the user list
+        method that returns or displays the user list
         '''
         return cls.user_list
