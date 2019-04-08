@@ -6,7 +6,7 @@ class TestUser(unittest.TestCase):
 
     def setUp(self):
         '''
-        Set up method to run before each test cases.
+        this is Set up method to run before each test cases.
         '''
         self.new_user = User("vanmo9","mohassan")
 
@@ -20,7 +20,7 @@ class TestUser(unittest.TestCase):
 
     def test_save_user(self):
         '''
-        test_save_user test case to test if the user object is saved in to the contact list
+        test_save_user test case to test if the user object is saved in to the user list
 
         '''
 
@@ -29,7 +29,7 @@ class TestUser(unittest.TestCase):
 
     def test_save_multiple_user(self):
         '''
-        test_save_multiple_user to check if we can save multiple user objects to our user_list
+        test_save_multiple_user is to check if we can save multiple user objects to our user list
         '''
 
         self.new_user.save_user()
@@ -46,7 +46,7 @@ class TestUser(unittest.TestCase):
 
     def test_save_multiple_user(self):
         '''
-        test_save_multiple_user to check if we can save multiple user objects to our user_list
+        test_save_multiple_user to check if we can save multiple user objects to our user list
         '''
         self.new_user.save_user()
         test_user = User("vanmo9", "mohassan")
@@ -65,23 +65,23 @@ class TestUser(unittest.TestCase):
         self.assertEqual(len(User.user_list),1)
 
 
-    def test_find_user_by_number(self):
+    def test_find_user_by_username(self):
         '''
-        this is to check if we can find user by a number and display information
+        this is to check if we can find user by a username and display information
         '''
 
         self.new_user.save_user()
         test_user = User("vanmo9", "mohassan")
         test_user.save_user()
 
-        found_user = User.find_by_number("vanmo9")
+        found_user = User.find_by_username("vanmo9")
 
 
         self.assertEqual(found_user.username,test_user.username)
 
     def test_user_exists(self):
         '''
-        test to check if we can return aBollean if we cannot find the user
+        test to check if we can return aBollean when we cannot find the user
         '''
 
         self.new_user.save_user()
