@@ -26,7 +26,7 @@ def del_user(user):
 
 def find_user(username):
     '''
-    function that finds user by number and returns the user
+    function that finds user by username and returns the user
     '''
 
     return User.find_by_number(username)
@@ -34,7 +34,7 @@ def find_user(username):
 
 def check_existing_users(username):
     '''
-    function that cheks if a user exists with that number and return a Boolean
+    function that cheks if a user exists with that username and return a Boolean
     '''
     return User.user_exist(username)
 
@@ -77,7 +77,7 @@ def main():
 
         elif short_code == 'du':
             if display_users():
-                print("Here is a list of all your users")
+                print("Here is a list of all your users we have in our account")
                 print('\n')
 
 
@@ -86,7 +86,7 @@ def main():
                     print('\n')
             else:
                 prin('\n')
-                print("You dont seem to have any users saved yet")
+                print("You don't seem to have any users saved yet. Please save then check again")
                 print('\n')
 
 
@@ -100,10 +100,10 @@ def main():
 
 
             else:
-                print("That contact does not exist")
+                print("The user you searched for does not exist please try again later")
 
         elif short_code == "ex":
-            print("Bye .......")
+            print("Thank you for using our application hope you enjoyed")
 
         else:
             print("I really didn't get that. Please use the short codes")
