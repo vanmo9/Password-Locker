@@ -25,7 +25,7 @@ class User:
         User.user_list.remove(self)
 
     @classmethod
-    def find_by_number(cls, username):
+    def find_by_username(cls, username):
         '''
         method that allows to take in a username and returns a user that matches with  that username .
 
