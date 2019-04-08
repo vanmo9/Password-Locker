@@ -15,7 +15,7 @@ This is a python web application that allows users to create accounts and can lo
 1.  From the repository, click + in the global sidebar and select Clone this repository under Get to work.
 2.  Copy the clone command.
 3.  From terminal you use
-    '$ git clone < https://github.com/vanmo9/Password-Locker.git>'
+    '$ git clone <https://github.com/vanmo9/Password-Locker.git/>'
 
 ## Technologies Used
 
