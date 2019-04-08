@@ -103,7 +103,7 @@ def main():
                 print("The user you searched for does not exist please try again later")
 
         elif short_code == "ex":
-            print("Thank you for using our application hope you enjoyed")
+            print("Thank you for using our application hope you enjoyed.")
 
         else:
             print("I really didn't get that. Please use the short codes")
