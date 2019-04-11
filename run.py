@@ -48,7 +48,7 @@ def display_users():
 
 
 def main():
-    print("Welcome to password Locker application. What is your name?")
+    print("Welcome to PASSWORD LOCKER application. What is your name?")
     user_name = input()
 
     print(f"Hello {user_name}. What would you like to do?")
@@ -66,15 +66,14 @@ def main():
             print("Username")
             username = input()
 
-            print("Password. Leave blank if you want our application to generate password for you")
+            print("put Password or Leave blank for our application to generate password for you")
             password = input()
 
             if password == "":
                 password = ''.join(random.choices(string.ascii_uppercase + string.digits, k=20))
 
-
             save_user(create_user(username,password))
-            print ('\n')
+            print('\n')
             print(f"New User {username} {password} created")
             print('\n')
 
@@ -102,7 +101,7 @@ def main():
 
         elif short_code == 'du':
             if display_users():
-                print("Here is a list of all your users we have in our application")
+                print("Here is a list of all users we have in our application")
                 print('\n')
 
 
@@ -110,7 +109,7 @@ def main():
                     print(f"{users.username} {users.password}")
                     print('\n')
             else:
-                prin('\n')
+                print('\n')
                 print("You don't seem to have any users saved yet. Please save then check again later")
                 print('\n')
 
