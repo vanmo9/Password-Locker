@@ -1,5 +1,7 @@
 #!/usr/bin/env python3.6
 from user import User
+import random
+import string
 
 
 def create_user(username,password):
@@ -46,15 +48,15 @@ def display_users():
 
 
 def main():
-    print("Welcome. What is your name?")
+    print("Welcome to password Locker application. What is your name?")
     user_name = input()
 
-    print(f"Hello {user_name}. What would you like?")
+    print(f"Hello {user_name}. What would you like to do?")
     print('\n')
 
 
     while True:
-        print("Use these short codes : cu - create a new user, du - display users, fu -find a user, ex -exit the user list ")
+        print("Use these short codes : cu - create a new user,  li - login, du - display users, fu -find a user, ex -exit the user list ")
         short_code = input().lower()
 
         if short_code == 'cu':
@@ -64,8 +66,11 @@ def main():
             print("Username")
             username = input()
 
-            print("Password")
+            print("Password. Leave blank if you want our application to generate password for you")
             password = input()
+
+            if password == "":
+                password = ''.join(random.choices(string.ascii_uppercase + string.digits, k=20))
 
 
             save_user(create_user(username,password))
@@ -74,10 +79,30 @@ def main():
             print('\n')
 
 
+        elif short_code == 'li':
+            print("Login")
+
+            print("Enter username")
+            username = input()
+
+            print("Enter password")
+            password = input()
+
+            for users in display_users():
+                if username == users.username and password == users.password:
+                    print("Logged in")
+                    break
+                else:
+                    print("There is no such user")
+                    break
+
+
+
+
 
         elif short_code == 'du':
             if display_users():
-                print("Here is a list of all your users we have in our account")
+                print("Here is a list of all your users we have in our application")
                 print('\n')
 
 
@@ -86,12 +111,12 @@ def main():
                     print('\n')
             else:
                 prin('\n')
-                print("You don't seem to have any users saved yet. Please save then check again")
+                print("You don't seem to have any users saved yet. Please save then check again later")
                 print('\n')
 
 
         elif short_code == 'fu':
-            print("Enter the user you want to search for")
+            print("Please enter the user you want to search for")
 
             search_user = input()
             if check_existing_users(search_user):
@@ -104,9 +129,11 @@ def main():
 
         elif short_code == "ex":
             print("Thank you for using our application hope you enjoyed.")
+            break
 
         else:
             print("I really didn't get that. Please use the short codes")
+
 
 
 
