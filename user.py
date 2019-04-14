@@ -6,9 +6,10 @@ class User:
     """
     user_list = []
 
-    def __init__(self, username, password):
+    def __init__(self, username, account_name, password):
 
         self.username = username
+        self.account_name = account_name
         self.password = password
 
     def save_user(self):

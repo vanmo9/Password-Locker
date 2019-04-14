@@ -4,11 +4,11 @@ import random
 import string
 
 
-def create_user(username,password):
+def create_user(username,account_name,password):
         '''
         function to create new user
         '''
-        new_user = User(username,password)
+        new_user = User(username,account_name,password)
         return new_user
 
 
@@ -31,7 +31,7 @@ def find_user(username):
     function that finds user by username and returns the user
     '''
 
-    return User.find_by_number(username)
+    return User.find_by_username(username)
 
 
 def check_existing_users(username):
@@ -66,15 +66,18 @@ def main():
             print("Username")
             username = input()
 
+            print("Account Name ie Instergram, Facebook, Twitter")
+            account_name = input()
+
             print("put Password or Leave blank for our application to generate password for you")
             password = input()
 
             if password == "":
                 password = ''.join(random.choices(string.ascii_uppercase + string.digits, k=20))
 
-            save_user(create_user(username,password))
+            save_user(create_user(username,account_name,password))
             print('\n')
-            print(f"New User {username} {password} created")
+            print(f"New User {username} {account_name} {password} created")
             print('\n')
 
 
@@ -84,11 +87,14 @@ def main():
             print("Enter username")
             username = input()
 
+            print("Account Name")
+            account_name = input()
+
             print("Enter password")
             password = input()
 
             for users in display_users():
-                if username == users.username and password == users.password:
+                if username == users.username and account_name == users.account_name and password == users.password:
                     print("Logged in")
                     break
                 else:
@@ -106,7 +112,7 @@ def main():
 
 
                 for users in display_users():
-                    print(f"{users.username} {users.password}")
+                    print(f"{users.username} {users.account_name} {users.password}")
                     print('\n')
             else:
                 print('\n')
@@ -120,7 +126,7 @@ def main():
             search_user = input()
             if check_existing_users(search_user):
                 search_user = find_user(search_user)
-                print(f"{search_user.username} {search_user.password}")
+                print(f"{search_user.username} {search_user.account_name} {search_user.password}")
 
 
             else:

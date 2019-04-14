@@ -2,7 +2,7 @@
 
 This is a python web application that allows users to create accounts and can login with their usernames and Passwords. They can also login with their already existing accounts.
 
-## Author
+## Author 
 
 *   Mohamed Hassan Mohamed
 
